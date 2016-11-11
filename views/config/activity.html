@@ -1,5 +1,5 @@
 <div layout="row" layout-align="center">
-    <div class="page" flex="70" md-whiteframe="3" style="max-height: none;">
+    <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
         <md-toolbar class="md-primary">
             <div class="md-toolbar-tools">
                 Activity Configuration Generator
@@ -49,8 +49,6 @@
                         <label>Notes</label>
                         <textarea ng-model="source.notes" required></textarea>
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteSource($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>
@@ -69,7 +67,7 @@
             <md-subheader class="md-primary">Correct Order</md-subheader>
             <div ng-repeat="source in data.correctOrder track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
-                    <md-input-container flex="30">
+                    <md-input-container flex="25">
                         <label>Id</label>
                         <input ng-model="source.id" required />
                     </md-input-container>
@@ -77,8 +75,6 @@
                         <label>Rationale</label>
                         <textarea ng-model="source.rationale" required></textarea>
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteCorrectOrderSource($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>
@@ -97,7 +93,7 @@
             <md-subheader class="md-primary">Example Order 1</md-subheader>
             <div ng-repeat="source in data.exampleOrder1 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
-                    <md-input-container flex="30">
+                    <md-input-container flex="25">
                         <label>Id</label>
                         <input ng-model="source.id" required />
                     </md-input-container>
@@ -105,8 +101,6 @@
                         <label>Rationale</label>
                         <textarea ng-model="source.rationale" required></textarea>
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder1Source($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>
@@ -125,7 +119,7 @@
             <md-subheader class="md-primary">Example Order 2</md-subheader>
             <div ng-repeat="source in data.exampleOrder2 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
-                    <md-input-container flex="30">
+                    <md-input-container flex="25">
                         <label>Id</label>
                         <input ng-model="source.id" required />
                     </md-input-container>
@@ -133,8 +127,6 @@
                         <label>Rationale</label>
                         <textarea ng-model="source.rationale" required></textarea>
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder2Source($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>
@@ -153,7 +145,7 @@
             <md-subheader class="md-primary">Example Order 3</md-subheader>
             <div ng-repeat="source in data.exampleOrder3 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
-                    <md-input-container flex="30">
+                    <md-input-container flex="25">
                         <label>Id</label>
                         <input ng-model="source.id" required />
                     </md-input-container>
@@ -161,8 +153,6 @@
                         <label>Rationale</label>
                         <textarea ng-model="source.rationale" required></textarea>
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder3Source($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>

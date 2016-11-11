@@ -1,0 +1,39 @@
+<div layout="row" layout-align="center">
+    <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
+        <div layout="row" layout-margin layout-padding>
+                <h1 flex>InfoTimeline:<br/><small style="font-weight: normal;">{{activity.activityName}}</small></h1>
+        </div>
+        <!--Intro to Concept-->
+        <div layout="row" layout-margin layout-padding>
+            <md-card md-theme="dark-green" md-theme-watch>
+                <img ng-src="" class="md-card-image" alt="Orientation">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Intorduction to the Concepts</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{config.introductionConceptText}}
+                    </p>
+                </md-card-contend>
+            </md-card>
+        </div>
+        <!--Intro to Tool-->
+        <div layout="row" layout-margin layout-padding>
+            <md-card md-theme="dark-green" md-theme-watch>
+                <img ng-src="" class="md-card-image" alt="Orientation">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Intorduction to the Tool</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{config.introductionToolText}}
+                    </p>
+                </md-card-contend>
+            </md-card>
+        </div>
+    </div>
+</div>

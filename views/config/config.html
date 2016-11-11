@@ -1,5 +1,5 @@
 <div layout="row" layout-align="center">
-    <div class="page" flex="70" md-whiteframe="3" style="max-height: none;">
+    <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
         <md-toolbar class="md-primary">
             <div class="md-toolbar-tools">
                 Configuration Generator
@@ -38,12 +38,10 @@
                         <label>Menu Display Text</label>
                         <input ng-model="link.displayText" required />
                     </md-input-container>
-                    <md-input-container flex="50">
+                    <md-input-container flex="45">
                         <label>Activity Folder Name</label>
                         <input ng-model="link.activityFolder" required />
                     </md-input-container>
-                </div>
-                <div layout="row" layout-align="end end" layout-margin>
                     <md-button class="md-icon-button" aria-label="Delete Link" ng-click="deleteMenuLink($index)">
                         <md-icon md-font-set="material-icons"> delete </md-icon>
                     </md-button>
