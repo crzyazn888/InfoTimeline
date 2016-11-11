@@ -1,0 +1,66 @@
+<html ng-app="InfoTimelineConfig">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material CSS now available via Google CDN; version 1.1.1 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/includes/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/includes/style.css" />
+
+    <title>InfoTimeline Management</title>
+</head>
+<body ng-controller="ConfigMainController" layout="column" ng-cloak>
+    <md-toolbar md-scroll-shrink ng-if="true">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleMenu()">
+                <md-icon md-font-set="material-icons"> menu </md-icon>
+            </md-button>
+            <h3>
+                <span>InfoTimelineConfig</span>
+            </h3>
+        </div>
+    </md-toolbar>
+
+    <md-sidenav md-component-id="configMenu" class="md-sidenav-left">
+        <div layout="column">
+            <md-toolbar layout="column" style="height: 12rem;">
+                <md-button class="md-icon-button" aria-label="Close" ng-click="toggleMenu()" layout-align="start start" layout="row" flex>
+                    <md-icon md-font-set="material-icons"> close </md-icon>
+                </md-button>
+                <md-icon md-font-set="material-icons" style="font-size: 60px; height: 60px; width: 60px;" flex> timeline </md-icon>
+                <h2 flex style="text-align: center;">InfoTimeline</h2>
+            </md-toolbar>
+            <md-list class="sideNav-menu-list">
+                <md-list-item ng-href="#/" ng-click="toggleMenu()">Home</md-list-item>
+                <md-list-item ng-href="#/config" ng-click="toggleMenu()">Configuration Generator</md-list-item>
+                <md-list-item ng-href="#/activity/" ng-click="toggleMenu()">Activity Generator</md-list-item>
+            </md-list>
+        </div>
+    </md-sidenav>
+
+    <md-content layout="column" flex>
+        <div flex ng-view></div>
+    </md-content>
+
+    <!--jQuery-->
+    <script src="/includes/jquery-3.1.1.min.js"></script>
+    <script src="/includes/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!--<script src="/includes/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 1.1.1 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+
+    <!-- Angular App Dependencies -->
+    <script src="/app/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+    <script src="/includes/sortable.min.js"></script>
+
+    <!-- Angular App Controllers -->
+    <script src="/app/controllers/config/ConfigControllers.js"></script>
+</body>

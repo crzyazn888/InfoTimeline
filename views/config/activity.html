@@ -1,0 +1,183 @@
+<div layout="row" layout-align="center">
+    <div class="page" layout="column" flex="70" md-whiteframe="3">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                Activity Configuration Generator
+            </div>
+        </md-toolbar>
+
+        <!--General Config-->
+        <div layout="row" layout-padding-lg flex>
+            <div flex="100">
+                <md-input-container class="md-block" flex>
+                    <label>Activity Name</label>
+                    <input ng-model="data.activityName" />
+                </md-input-container>
+            </div>
+        </div>
+
+        <!--Sources-->
+        <section>
+            <md-subheader class="md-primary">Sources</md-subheader>
+            <div layout="column" ng-repeat="source in data.sources track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="30">
+                        <label>Id</label>
+                        <input ng-model="source.id" required />
+                    </md-input-container>
+                    <md-input-container flex="70">
+                        <label>Path</label>
+                        <input ng-model="source.path" required />
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="33">
+                        <label>Author</label>
+                        <input ng-model="source.author" required />
+                    </md-input-container>
+                    <md-input-container flex="33">
+                        <label>Medium</label>
+                        <input ng-model="source.medium" required />
+                    </md-input-container>
+                    <md-input-container flex="33">
+                        <label>Audience</label>
+                        <input ng-model="source.audience" required />
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Notes</label>
+                        <textarea ng-model="source.notes" required></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteSource($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Source" ng-click="addSource()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <!--Correct Order-->
+        <section ng-model="data.correctOrder" ui-sortable="sortableOptions">
+            <md-subheader class="md-primary">Correct Order</md-subheader>
+            <div layout="column" ng-repeat="source in data.correctOrder track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="30">
+                        <label>Id</label>
+                        <input ng-model="source.id" required />
+                    </md-input-container>
+                    <md-input-container flex="70">
+                        <label>Rationale</label>
+                        <textarea ng-model="source.rationale" required></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteCorrectOrderSource($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Source" ng-click="addCorrectOrderSource()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <!--Example Order 1-->
+        <section ng-model="data.exampleOrder1" ui-sortable="sortableOptions">
+            <md-subheader class="md-primary">Example Order 1</md-subheader>
+            <div layout="column" ng-repeat="source in data.exampleOrder1 track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="30">
+                        <label>Id</label>
+                        <input ng-model="source.id" required />
+                    </md-input-container>
+                    <md-input-container flex="70">
+                        <label>Rationale</label>
+                        <textarea ng-model="source.rationale" required></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder1Source($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Source" ng-click="addExampleOrder1Source()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <!--Example Order 2-->
+        <section ng-model="data.exampleOrder2" ui-sortable="sortableOptions">
+            <md-subheader class="md-primary">Example Order 2</md-subheader>
+            <div layout="column" ng-repeat="source in data.exampleOrder2 track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="30">
+                        <label>Id</label>
+                        <input ng-model="source.id" required />
+                    </md-input-container>
+                    <md-input-container flex="70">
+                        <label>Rationale</label>
+                        <textarea ng-model="source.rationale" required></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder2Source($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Source" ng-click="addExampleOrder2Source()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <!--Example Order 3-->
+        <section ng-model="data.exampleOrder3" ui-sortable="sortableOptions">
+            <md-subheader class="md-primary">Example Order 3</md-subheader>
+            <div layout="column" ng-repeat="source in data.exampleOrder3 track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="30">
+                        <label>Id</label>
+                        <input ng-model="source.id" required />
+                    </md-input-container>
+                    <md-input-container flex="70">
+                        <label>Rationale</label>
+                        <textarea ng-model="source.rationale" required></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Source" ng-click="deleteExampleOrder3Source($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Source" ng-click="addExampleOrder3Source()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <div layout="row" layout-align="end end" layout-padding layout-margin>
+            <md-button class="md-primary md-raised" aria-label="Save Json" ng-click="saveFile()">Save &amp; Download</md-button>
+        </div>
+    </div>
+</div>
