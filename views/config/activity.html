@@ -1,5 +1,5 @@
 <div layout="row" layout-align="center">
-    <div class="page" layout="column" flex="70" md-whiteframe="3">
+    <div class="page" flex="70" md-whiteframe="3" style="max-height: none;">
         <md-toolbar class="md-primary">
             <div class="md-toolbar-tools">
                 Activity Configuration Generator
@@ -8,7 +8,7 @@
 
         <!--General Config-->
         <div layout="row" layout-padding-lg flex>
-            <div flex="100">
+            <div flex>
                 <md-input-container class="md-block" flex>
                     <label>Activity Name</label>
                     <input ng-model="data.activityName" />
@@ -19,7 +19,7 @@
         <!--Sources-->
         <section>
             <md-subheader class="md-primary">Sources</md-subheader>
-            <div layout="column" ng-repeat="source in data.sources track by $index" layout-padding>
+            <div ng-repeat="source in data.sources track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
                     <md-input-container flex="30">
                         <label>Id</label>
@@ -67,7 +67,7 @@
         <!--Correct Order-->
         <section ng-model="data.correctOrder" ui-sortable="sortableOptions">
             <md-subheader class="md-primary">Correct Order</md-subheader>
-            <div layout="column" ng-repeat="source in data.correctOrder track by $index" layout-padding>
+            <div ng-repeat="source in data.correctOrder track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
                     <md-input-container flex="30">
                         <label>Id</label>
@@ -95,7 +95,7 @@
         <!--Example Order 1-->
         <section ng-model="data.exampleOrder1" ui-sortable="sortableOptions">
             <md-subheader class="md-primary">Example Order 1</md-subheader>
-            <div layout="column" ng-repeat="source in data.exampleOrder1 track by $index" layout-padding>
+            <div ng-repeat="source in data.exampleOrder1 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
                     <md-input-container flex="30">
                         <label>Id</label>
@@ -123,7 +123,7 @@
         <!--Example Order 2-->
         <section ng-model="data.exampleOrder2" ui-sortable="sortableOptions">
             <md-subheader class="md-primary">Example Order 2</md-subheader>
-            <div layout="column" ng-repeat="source in data.exampleOrder2 track by $index" layout-padding>
+            <div ng-repeat="source in data.exampleOrder2 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
                     <md-input-container flex="30">
                         <label>Id</label>
@@ -151,7 +151,7 @@
         <!--Example Order 3-->
         <section ng-model="data.exampleOrder3" ui-sortable="sortableOptions">
             <md-subheader class="md-primary">Example Order 3</md-subheader>
-            <div layout="column" ng-repeat="source in data.exampleOrder3 track by $index" layout-padding>
+            <div ng-repeat="source in data.exampleOrder3 track by $index" layout-padding>
                 <div layout="row" layout-margin flex>
                     <md-input-container flex="30">
                         <label>Id</label>

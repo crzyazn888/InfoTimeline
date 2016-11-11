@@ -1,5 +1,95 @@
-<div layout="row" layout-align="center" layout-padding-lg>
-    <div class="page" flex="70" md-whiteframe="3">
-        <h1>Config Generator</h1>
+<div layout="row" layout-align="center">
+    <div class="page" flex="70" md-whiteframe="3" style="max-height: none;">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                Configuration Generator
+            </div>
+        </md-toolbar>
+
+        <!--General Config-->
+        <section>
+            <md-subheader class="md-primary">General Configuration</md-subheader>
+            <div layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Application Name</label>
+                        <input ng-model="data.applicationName" />
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin-lg flex>
+                    <md-input-container flex="50">
+                        <label>Introduction to Concept Text</label>
+                        <textarea ng-model="data.introductionConceptText" md-maxlength="500"></textarea>
+                    </md-input-container>
+                    <md-input-container flex="50">
+                        <label>Introduction to Tool Text</label>
+                        <textarea ng-model="data.introductionToolText" md-maxlength="500"></textarea>
+                    </md-input-container>
+                </div>
+            </div>
+        </section>
+
+        <!--Active Scenarios(Activity)-->
+        <section>
+            <md-subheader class="md-primary">Active Activity Menu Links</md-subheader>
+            <div ng-repeat="link in data.menuLinks track by $index" layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex="50">
+                        <label>Menu Display Text</label>
+                        <input ng-model="link.displayText" required />
+                    </md-input-container>
+                    <md-input-container flex="50">
+                        <label>Activity Folder Name</label>
+                        <input ng-model="link.activityFolder" required />
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="end end" layout-margin>
+                    <md-button class="md-icon-button" aria-label="Delete Link" ng-click="deleteMenuLink($index)">
+                        <md-icon md-font-set="material-icons"> delete </md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+            <div layout="row" layout-align="end end" layout-margin-lg>
+                <md-button class="md-fab md-primary" aria-label="Add Link" ng-click="addMenuLink()">
+                    <md-icon md-font-set="material-icons"> add </md-icon>
+                </md-button>
+            </div>
+        </section>
+
+        <!--Instructions-->
+        <section>
+            <md-subheader class="md-primary">Instructions Configuration</md-subheader>
+            <div layout-padding>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Step 1 Instructions</label>
+                        <textarea ng-model="data.step1Instructions" md-maxlength="1000"></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Step 2 Instructions</label>
+                        <textarea ng-model="data.step2Instructions" md-maxlength="1000"></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Step 3 Instructions</label>
+                        <textarea ng-model="data.step3Instructions" md-maxlength="1000"></textarea>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-margin flex>
+                    <md-input-container flex>
+                        <label>Step 4 Instructions</label>
+                        <textarea ng-model="data.step4Instructions" md-maxlength="1000"></textarea>
+                    </md-input-container>
+                </div>
+            </div>
+        </section>
+
+        <div layout="row" layout-align="end end" layout-padding layout-margin>
+            <md-button class="md-primary md-raised" aria-label="Save Json" ng-click="saveFile()">Save &amp; Download</md-button>
+        </div>
     </div>
 </div>

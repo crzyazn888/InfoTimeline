@@ -12,8 +12,64 @@ angular.module('InfoTimelineConfig')
     .controller('ConfigHomeController', ['$scope', function($scope) {
 
     }])
-    .controller('ConfigConfigController', ['$scope', function($scope) {
+    .controller('ConfigConfigController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+        function init() {
+            $scope.data = {
+                menuLinks: []
+            };
+            $http({
+                method: 'GET',
+                url: '/app/backend/config/config.php?load=1'
+            }).then(function successCallback(response) {
+                console.log(response);
+                $scope.data = response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        }
 
+        init();
+
+        $scope.sortableOptions = {
+            axis: 'y'
+        };
+
+        /**
+        * Add menu links
+        *
+        * @method addMenuLink
+        **/
+        $scope.addMenuLink = function() {
+            $scope.data.menuLinks.push({});
+        };
+        /**
+        * Delete menu links
+        *
+        * @method deleteMenuLink
+        **/
+        $scope.deleteMenuLink = function(linkIndex) {
+            $scope.data.menuLinks.splice(linkIndex, 1);
+        };
+
+        /**
+        * Save data to JSON and Return for Download
+        *
+        * @method saveFile
+        **/
+        $scope.saveFile = function() {
+            console.log($scope.data);
+            $http({
+                method: 'POST',
+                url: '/app/backend/config/config.php',
+                data: $scope.data,
+                headers: {'Content-Type': 'application/json'}
+            }).then(function successCallback(response) {
+                console.log(response);
+                $window.open('/app/backend/config/config.php?download=1', '_blank');
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        };
     }])
     .controller('ConfigActivityController', ['$scope', '$http', '$window', function($scope, $http, $window) {
         function init() {
@@ -128,7 +184,7 @@ angular.module('InfoTimelineConfig')
                 method: 'POST',
                 url: '/app/backend/config/activity.php',
                 data: $scope.data,
-    headers: {'Content-Type': 'application/json'}
+                headers: {'Content-Type': 'application/json'}
             }).then(function successCallback(response) {
                 console.log(response);
                 $window.open('/app/backend/config/activity.php?download=1', '_blank');
