@@ -1,0 +1,17 @@
+<?php
+//Copy this file into /config/db.php
+//Credentials
+$servername = "localhost";
+$username = "--Enter Username Here--";
+$password = "--Enter Password Here--";
+$dbname = "--Enter Database Name--"; //default: info_timeline
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+//echo "Connected successfully";
+?>

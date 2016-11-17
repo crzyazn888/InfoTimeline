@@ -1,4 +1,7 @@
 /*GLobal Styles*/
+html {
+    overflow: hidden;
+}
 body {
     overflow: hidden;
     max-width: 100%;
@@ -6,6 +9,9 @@ body {
 }
 md-content {
     background: #dddddd;
+}
+img {
+    width: 100%;
 }
 .sideNav-menu-list a {
     margin: 0;
@@ -15,5 +21,11 @@ md-content {
 }
 
 /*Activity Styles*/
+.activity-source {
+    background: #ffffff;
+}
+.source-drag-handle {
+    cursor: move;
+}
 
 /*Config Styles*/

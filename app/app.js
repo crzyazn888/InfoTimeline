@@ -30,6 +30,10 @@ angular.module('InfoTimeline', [
         .when('/activity/:activityFolder', {
             templateUrl: '/views/orientation/index.html',
             controller: 'ActivityOrientationController'
+        })
+        .when('/activity/:activityFolder/1/:id', {
+            templateUrl: '/views/step1/step1.html',
+            controller: 'ActivityStep1Controller'
         });
 });
 

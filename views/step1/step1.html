@@ -1,0 +1,43 @@
+<div layout="row" layout-align="center">
+    <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
+        <!--Action Buttons-->
+        <md-fab-speed-dial md-direction="down" md-open="actionsState" class="md-fling md-fab-top-right" ng-mouseenter="actionsState=true">
+            <md-fab-trigger>
+                <md-button class="md-fab" ng-click="saveData()">
+                    <md-tooltip md-direction="left">Continue</md-tooltip>
+                    <md-icon md-font-set="material-icons"> chevron_right </md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button class="md-fab md-mini" ng-click="helpToggle($event)">
+                    <md-tooltip md-direction="left">Help</md-tooltip>
+                    <md-icon md-font-set="material-icons"> help_outline </md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <!--Heading-->
+        <div layout="row" layout-margin layout-padding>
+                <h1 flex>{{activity.activityName}}<br/><small style="font-weight: normal;">Step 1: Order the sources</small></h1>
+        </div>
+        <!--Sources-->
+        <div layout="column" ui-sortable="activitySortableOptions" ng-model="sources">
+            <div layout="column" class="activity-source" ng-repeat="source in sources track by $index">
+                <div layout="row" layout-align="center center" layout-padding-lg>
+                    <div flex="15" class="source-drag-handle">
+                        <md-icon md-font-set="material-icons" flex> drag_handle </md-icon>
+                    </div>
+                    <div flex="25">
+                        <img src="{{source.path}}" alt="{{source.notes}}" ng-click="showHint($index, $event)" />
+                    </div>
+                    <div flex="60">
+                        <md-input-container md-no-float class="md-block">
+                            <textarea ng-model="source.rationale" placeholder="Enter your Rationale..." rows="4"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+        </div>
+    </div>
+
+</div>

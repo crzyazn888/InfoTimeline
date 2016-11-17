@@ -48,3 +48,4 @@ Temporary Items
 
 #Custom Directories
 data/
+config/db.php
