@@ -62,6 +62,20 @@ angular.module('InfoTimeline.Services', [])
             });
         };
 
+        //Load the State
+        this.loadState = function (id) {
+            return $http({
+                method: 'GET',
+                url: '/app/backend/loadState.php?id='+id
+            }).then(function(response) {
+                //console.log(response);
+                return response.data;
+            }, function(httpError) {
+                //console.log(response);
+                throw httpError;
+            });
+        };
+
         //Save the Data
         this.saveData = function (id, activity, sources) {
             var saveData = {
