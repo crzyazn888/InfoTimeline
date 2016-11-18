@@ -25,4 +25,15 @@ angular.module('InfoTimeline')
     }])
     .controller('MainInstructorsController', ['$scope', function($scope) {
 
+    }])
+    .controller('MainLoadController', ['$scope', '$routeParams', 'dbService', '$location', function($scope, $routeParams, dbService, $location) {
+        function init() {
+            $scope.routeParams = $routeParams;
+            dbService.loadState($scope.routeParams.id).then(function(response) {
+                var url = "/activity/"+response.activity+"/"+response.step+"/"+$scope.routeParams.id;
+                $location.path(url);
+            });
+        }
+
+        init();
     }]);
