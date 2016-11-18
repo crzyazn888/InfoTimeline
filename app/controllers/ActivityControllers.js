@@ -260,7 +260,7 @@ angular.module('InfoTimeline')
             configService.loadActivity($scope.routeParams.activityFolder).then(function(response) {
                 $scope.activity = response;
             });
-            dbService.saveState($scope.routeParams.id, 2, $scope.routeParams.activityFolder);
+            dbService.saveState($scope.routeParams.id, 4, $scope.routeParams.activityFolder);
             dbService.loadData($scope.routeParams.id, 1, 1).then(function(response) {
                 $scope.sources = response;
             });
