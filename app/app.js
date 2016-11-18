@@ -34,6 +34,14 @@ angular.module('InfoTimeline', [
         .when('/activity/:activityFolder/1/:id', {
             templateUrl: '/views/step1/step1.html',
             controller: 'ActivityStep1Controller'
+        })
+        .when('/activity/:activityFolder/2/:id', {
+            templateUrl: '/views/step2/step2.html',
+            controller: 'ActivityStep2Controller'
+        })
+        .when('/activity/:activityFolder/3/:id', {
+            templateUrl: '/views/step3/step3.html',
+            controller: 'ActivityStep3Controller'
         });
 });
 
