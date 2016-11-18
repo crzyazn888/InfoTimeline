@@ -4,29 +4,34 @@
             <div layout="column">
                 <!--Your Rationale-->
                 <div layout="row" layout-margin>
-                    <div flex="70">
+                    <div flex="75">
                         <h3>Your Rationale</h3>
                         <p>
                             {{source.rationale}}
                         </p>
                     </div>
-                    <div flex="30">
+                    <div flex="25">
                         <img src="{{source.path}}" alt="{{source.notes}}" />
                     </div>
                 </div>
                 <!--Example Rationale-->
                 <div layout="row" layout-margin>
-                    <div flex="70">
+                    <div flex="75">
                         <h3>Their Rationale</h3>
                         <p>
                             {{source.exRationale}}
                         </p>
                     </div>
-                    <div flex="30">
+                    <div flex="25">
                         <img src="{{source.exPath}}" alt="{{source.exNotes}}" />
                     </div>
                 </div>
             </div>
         </div>
     </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <md-button class="md-accent md-raised" ng-click="hide()">
+            Close
+        </md-button>
+    </md-dialog-actions>
 </md-dialog>
