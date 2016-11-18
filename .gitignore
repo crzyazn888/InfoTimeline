@@ -50,3 +50,4 @@ Temporary Items
 data/
 config/db.php
 config/config.json
+app/backend/config/Topic.json
