@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2016 at 08:11 PM
+-- Generation Time: Nov 18, 2016 at 05:50 AM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -31,7 +31,6 @@ CREATE TABLE `it_activity_data` (
   `activity` varchar(255) NOT NULL,
   `source_order` text NOT NULL,
   `source_rationales` text NOT NULL,
-  `created_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
