@@ -1,0 +1,46 @@
+<div layout="row" layout-align="center">
+    <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
+        <!--Action Buttons-->
+        <md-fab-speed-dial md-direction="down" md-open="actionsState" class="md-fling md-fab-top-right" ng-mouseenter="actionsState=true">
+            <md-fab-trigger>
+                <md-button class="md-fab" ng-click="saveData()">
+                    <md-tooltip md-direction="left">Continue</md-tooltip>
+                    <md-icon md-font-set="material-icons"> chevron_right </md-icon>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button class="md-fab md-mini" ng-click="helpToggle($event)">
+                    <md-tooltip md-direction="left">Help</md-tooltip>
+                    <md-icon md-font-set="material-icons"> help_outline </md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <!--Heading-->
+        <div layout="row" layout-margin layout-padding>
+                <h1 flex>{{activity.activityName}}<br/><small style="font-weight: normal;">Step 2: Compare with another Student</small></h1>
+        </div>
+        <!--Sources-->
+        <div layout="column">
+            <div layout="row" style="text-align: center;" layout-align="center center" layout-padding-lg>
+                <div flex="45">
+                    <h4>Your Order</h4>
+                </div>
+                <div flex="45">
+                    <h4>Correct Order</h4>
+                </div>
+            </div>
+            <div layout="column" class="activity-source compare" ng-repeat="source in sources track by $index">
+                <div layout="row" layout-align="center center" ng-click="showRationale($index, $event)" layout-padding-lg>
+                    <div flex="45">
+                        <img src="{{source.path}}" alt="{{source.notes}}" />
+                    </div>
+                    <div flex="45">
+                        <img src="{{source.exPath}}" alt="{{source.exNotes}}" />
+                    </div>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </div>
+        </div>
+    </div>
+
+</div>
