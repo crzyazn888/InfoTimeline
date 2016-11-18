@@ -19,6 +19,10 @@ angular.module('InfoTimeline', [
             templateUrl: '/views/index/index.html',
             controller: 'MainIndexController'
         })
+        .when('/:id', {
+            templateUrl: '/views/index/load.html',
+            controller: 'MainLoadController'
+        })
         .when('/report', {
             templateUrl: '/views/index/report.html',
             controller: 'MainReportController'
