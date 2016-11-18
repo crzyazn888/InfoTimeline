@@ -1,0 +1,32 @@
+<md-dialog aria-label="Help" flex="70" md-theme="dark-green">
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <div layout="column">
+                <!--Your Rationale-->
+                <div layout="row" layout-margin>
+                    <div flex="70">
+                        <h3>Your Rationale</h3>
+                        <p>
+                            {{source.rationale}}
+                        </p>
+                    </div>
+                    <div flex="30">
+                        <img src="{{source.path}}" alt="{{source.notes}}" />
+                    </div>
+                </div>
+                <!--Example Rationale-->
+                <div layout="row" layout-margin>
+                    <div flex="70">
+                        <h3>Their Rationale</h3>
+                        <p>
+                            {{source.exRationale}}
+                        </p>
+                    </div>
+                    <div flex="30">
+                        <img src="{{source.exPath}}" alt="{{source.exNotes}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </md-dialog-content>
+</md-dialog>

@@ -82,6 +82,20 @@ angular.module('InfoTimeline.Services', [])
                 //throw httpError;
             });
         };
+
+        //Load Data
+        this.loadData = function (id, compare=0) {
+            return $http({
+                method: 'GET',
+                url: '/app/backend/loadData.php?id='+id+'&compare='+compare
+            }).then(function(response) {
+                console.log(response);
+                return response.data;
+            }, function(httpError) {
+                //console.log(response);
+                throw httpError;
+            });
+        };
     })
     .service('activityService', function() {
         //Shuffle an Array
