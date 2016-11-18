@@ -18,7 +18,7 @@ $checkSql = "SELECT * FROM it_activity_data WHERE id='".$json["id"]."'";
 $checkExist = $conn->query($checkSql);
 
 if($checkExist->num_rows == 0) {
-    $saveSql = "INSERT INTO it_activity_data VALUES ('".$json["id"]."', '".$json["activity"]."', '".$sources."', '".$rationales."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)";
+    $saveSql = "INSERT INTO it_activity_data VALUES ('".$json["id"]."', '".$json["activity"]."', '".$sources."', '".$rationales."', CURRENT_TIMESTAMP)";
 } else {
     $saveSql = "UPDATE it_activity_data SET source_order='".$sources."', source_rationales='".$rationales."' WHERE id='".$json["id"]."'";
 }
