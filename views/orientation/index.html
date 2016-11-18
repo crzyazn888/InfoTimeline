@@ -4,9 +4,11 @@
                 <h1 flex>InfoTimeline:<br/><small style="font-weight: normal;">{{activity.activityName}}</small></h1>
         </div>
         <!--Intro to Concept-->
+        <div layout="row" layout-align="center center">
+            <div class='embed-container' flex="100"><iframe src='https://www.youtube.com/embed/hy-jsamFAFo?rel=0' frameborder='0' allowfullscreen></iframe></div>
+        </div>
         <div layout="row" layout-margin layout-padding>
             <md-card md-theme="dark-green" md-theme-watch>
-                <img ng-src="" class="md-card-image" alt="Orientation">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">Intorduction to the Concepts</span>
@@ -22,7 +24,6 @@
         <!--Intro to Tool-->
         <div layout="row" layout-margin layout-padding>
             <md-card md-theme="dark-green" md-theme-watch>
-                <img ng-src="" class="md-card-image" alt="Orientation">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">Intorduction to the Tool</span>
@@ -43,3 +44,5 @@
         </div>
     </div>
 </div>
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
