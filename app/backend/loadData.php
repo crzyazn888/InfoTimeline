@@ -5,7 +5,11 @@ if(!isset($_GET["id"]) || $_GET["id"] == "") {
     http_response_code(404);
 }
 if(isset($_GET["compare"]) && $_GET["compare"] == 1) {
-    $randExample = "exampleOrder".rand(1,3);
+    if(isset($_GET["correct"]) && $_GET["correct"] == 1) {
+        $randExample = "correctOrder";
+    } else {
+        $randExample = "exampleOrder".rand(1,3);
+    }
 }
 
 $returnJson = array();
@@ -28,6 +32,7 @@ if($loadResult->num_rows == 1) {
     foreach($order as $key=>$value) {
         if($value != "") {
             $source = array();
+            $source["id"] = $value;
             $source["rationale"] = $rationales[$key];
             foreach($json["sources"] as $activitySourceList) {
                 if($activitySourceList["id"] == $value) {
