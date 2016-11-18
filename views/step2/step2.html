@@ -21,6 +21,14 @@
         </div>
         <!--Sources-->
         <div layout="column">
+            <div layout="row" style="text-align: center;" layout-align="center center" layout-padding-lg>
+                <div flex="45">
+                    <h4>Your Order</h4>
+                </div>
+                <div flex="45">
+                    <h4>Their Order</h4>
+                </div>
+            </div>
             <div layout="column" class="activity-source compare" ng-repeat="source in sources track by $index">
                 <div layout="row" layout-align="center center" ng-click="showRationale($index, $event)" layout-padding-lg>
                     <div flex="45">

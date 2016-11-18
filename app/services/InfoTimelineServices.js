@@ -89,7 +89,7 @@ angular.module('InfoTimeline.Services', [])
                 method: 'GET',
                 url: '/app/backend/loadData.php?id='+id+'&compare='+compare
             }).then(function(response) {
-                console.log(response);
+                //console.log(response);
                 return response.data;
             }, function(httpError) {
                 //console.log(response);
