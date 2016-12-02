@@ -6,6 +6,7 @@ if(isset($_GET['download']) && $_GET['download'] == 1) {
     echo($json);
     //echo('<script language="JavaScript">window.close();</script>');
 } else {
+    unlink(getcwd()."/Topic.json");
     $rest_json = file_get_contents("php://input");
     file_put_contents(getcwd()."/Topic.json", $rest_json);
     echo("Saved to Topic.json");

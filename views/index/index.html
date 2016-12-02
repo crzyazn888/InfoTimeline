@@ -1,5 +1,8 @@
 <div layout="row" layout-align="center">
     <div class="page" flex-gt-sm="70" flex md-whiteframe="3" style="max-height: none;">
-        <h1>Hello World!</h1>
+        <md-list>
+            <md-subheader class="md-no-sticky">Activity Selection</md-subheader>
+            <md-list-item ng-repeat="link in config.menuLinks" ng-href="#/activity/{{link.activityFolder}}">{{link.displayText}}</md-list-item>
+        </md-list>
     </div>
 </div>

@@ -82,7 +82,7 @@ angular.module('InfoTimeline')
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
-                fullscreen: false // Only for -xs, -sm breakpoints.
+                fullscreen: true // Only for -xs, -sm breakpoints.
             });
         };
 
@@ -149,7 +149,7 @@ angular.module('InfoTimeline')
         /**
         * Display Hint Dialog
         *
-        * @method showHint
+        * @method showRationale
         **/
         $scope.showRationale = function(sourceIndex, ev) {
             $mdDialog.show({
@@ -242,7 +242,7 @@ angular.module('InfoTimeline')
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
-                fullscreen: false // Only for -xs, -sm breakpoints.
+                fullscreen: true // Only for -xs, -sm breakpoints.
             });
         };
 
@@ -257,12 +257,14 @@ angular.module('InfoTimeline')
     .controller('ActivityStep4Controller', ['$scope', '$routeParams', 'configService', 'dbService', 'activityService', '$mdDialog', '$location', function($scope, $routeParams, configService, dbService, activityService, $mdDialog, $location) {
         function init() {
             $scope.routeParams = $routeParams;
+            $scope.sourceNum = 0;
             configService.loadActivity($scope.routeParams.activityFolder).then(function(response) {
                 $scope.activity = response;
             });
             dbService.saveState($scope.routeParams.id, 4, $scope.routeParams.activityFolder);
             dbService.loadData($scope.routeParams.id, 1, 1).then(function(response) {
                 $scope.sources = response;
+                $scope.loadSource($scope.sourceNum);
             });
             $scope.helpToggle();
         }
@@ -292,6 +294,16 @@ angular.module('InfoTimeline')
             };
         }
 
+        /**
+        * Load Source Data
+        *
+        * @method loadSource
+        **/
+        $scope.loadSource = function(sourceIndex) {
+            $scope.source = $scope.sources[sourceIndex];
+            $scope.sourceNum = sourceIndex;
+        };
+
         init();
 
         $scope.actionsState = true;
@@ -309,7 +321,7 @@ angular.module('InfoTimeline')
         /**
         * Display Hint Dialog
         *
-        * @method showHint
+        * @method showRationale
         **/
         $scope.showRationale = function(sourceIndex, ev) {
             $mdDialog.show({
