@@ -19,27 +19,48 @@
         <div layout="row" layout-margin layout-padding>
                 <h1 flex>{{activity.activityName}}<br/><small style="font-weight: normal;">Step 4: Compare with correct answer</small></h1>
         </div>
-        <!--Sources-->
-        <div layout="column">
-            <div layout="row" style="text-align: center;" layout-align="center center" layout-padding-lg>
-                <div flex="45">
-                    <h4>Your Order</h4>
-                </div>
-                <div flex="45">
-                    <h4>Correct Order</h4>
-                </div>
+        <div layout="row" layout-align="center">
+            <div flex="80" layout-margin layout-padding layout="row" layout-align="center">
+                <md-button class="md-accent md-raised" ng-repeat="source in sources track by $index" ng-click="loadSource($index)">
+                    {{$index+1}}
+                </md-button>
             </div>
-            <div layout="column" class="activity-source compare" ng-repeat="source in sources track by $index">
-                <div layout="row" layout-align="center center" ng-click="showRationale($index, $event)" layout-padding-lg>
-                    <div flex="45">
+        </div>
+        <!--Sources-->
+        <div layout="row" layout-align="center">
+            <md-card md-theme="dark-green" layout="column" flex="80">
+                <md-card-header>
+                    <md-card-header-text>
+                        <span class="md-title">Position {{sourceNum+1}}</span>
+                        <span class="md-subhead">Overfishing</span>
+                    </md-card-header-text>
+                </md-card-header>
+                <!--Your Rationale-->
+                <div layout="row" layout-margin>
+                    <div flex="75">
+                        <h3>Your Rationale</h3>
+                        <p>
+                            {{source.rationale}}
+                        </p>
+                    </div>
+                    <div flex="25">
                         <img src="{{source.path}}" alt="{{source.notes}}" />
                     </div>
-                    <div flex="45">
+                </div>
+                <!--Example Rationale-->
+                <div layout="row" layout-margin>
+                    <div flex="75">
+                        <h3>Correct Rationale</h3>
+                        <p>
+                            {{source.exRationale}}
+                        </p>
+                    </div>
+                    <div flex="25">
                         <img src="{{source.exPath}}" alt="{{source.exNotes}}" />
                     </div>
                 </div>
                 <md-divider ng-if="!$last"></md-divider>
-            </div>
+            </md-card>
         </div>
     </div>
 
