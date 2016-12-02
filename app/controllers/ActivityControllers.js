@@ -82,7 +82,7 @@ angular.module('InfoTimeline')
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
-                fullscreen: false // Only for -xs, -sm breakpoints.
+                fullscreen: true // Only for -xs, -sm breakpoints.
             });
         };
 
@@ -149,7 +149,7 @@ angular.module('InfoTimeline')
         /**
         * Display Hint Dialog
         *
-        * @method showHint
+        * @method showRationale
         **/
         $scope.showRationale = function(sourceIndex, ev) {
             $mdDialog.show({
@@ -242,7 +242,7 @@ angular.module('InfoTimeline')
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
-                fullscreen: false // Only for -xs, -sm breakpoints.
+                fullscreen: true // Only for -xs, -sm breakpoints.
             });
         };
 
@@ -309,7 +309,7 @@ angular.module('InfoTimeline')
         /**
         * Display Hint Dialog
         *
-        * @method showHint
+        * @method showRationale
         **/
         $scope.showRationale = function(sourceIndex, ev) {
             $mdDialog.show({
