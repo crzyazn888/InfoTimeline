@@ -82,5 +82,9 @@ angular.module('InfoTimelineConfig', [
         .when('/activity', {
             templateUrl: '/views/config/activity.html',
             controller: 'ConfigActivityController'
+        })
+        .when('/view', {
+            templateUrl: '/views/config/viewData.php',
+            controller: 'ConfigViewController'
         });
 });
