@@ -98,10 +98,10 @@ angular.module('InfoTimeline.Services', [])
         };
 
         //Load Data
-        this.loadData = function (id, compare=0, correct=0) {
+        this.loadData = function (id, compare=0, correct=0, final=0) {
             return $http({
                 method: 'GET',
-                url: '/app/backend/loadData.php?id='+id+'&compare='+compare+'&correct='+correct
+                url: '/app/backend/loadData.php?id='+id+'&compare='+compare+'&correct='+correct+'&final='+final
             }).then(function(response) {
                 //console.log(response);
                 return response.data;
