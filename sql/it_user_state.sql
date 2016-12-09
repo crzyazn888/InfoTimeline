@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `it_user_state`
 --
 
+DROP TABLE IF EXISTS `it_user_state`;
 CREATE TABLE `it_user_state` (
   `id` varchar(255) NOT NULL,
   `activity_folder` varchar(255) NOT NULL,
