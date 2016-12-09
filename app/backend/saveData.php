@@ -20,7 +20,8 @@ $checkExist = $conn->query($checkSql);
 if($checkExist->num_rows == 0) {
     $saveSql = "INSERT INTO it_activity_data VALUES ('".$json["id"]."', '".$json["activity"]."', '".$sources."', '".$rationales."', CURRENT_TIMESTAMP)";
 } else {
-    $saveSql = "UPDATE it_activity_data SET source_order='".$sources."', source_rationales='".$rationales."' WHERE id='".$json["id"]."'";
+    //TODO: Actually create a check for final step instead of assuming completion of step 2 will always insert new row
+    $saveSql = "UPDATE it_activity_data SET source_order_final='".$sources."', source_rationales_final='".$rationales."' WHERE id='".$json["id"]."'";
 }
 $result = $conn->query($saveSql);
 ?>

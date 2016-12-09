@@ -19,7 +19,7 @@ angular.module('InfoTimeline', [
             templateUrl: '/views/index/index.html',
             controller: 'MainIndexController'
         })
-        .when('/:id', {
+        .when('/load/:id', {
             templateUrl: '/views/index/load.html',
             controller: 'MainLoadController'
         })
@@ -50,6 +50,10 @@ angular.module('InfoTimeline', [
         .when('/activity/:activityFolder/4/:id', {
             templateUrl: '/views/step4/step4.html',
             controller: 'ActivityStep4Controller'
+        })
+        .when('/activity/:activityFolder/complete', {
+            templateUrl: '/views/orientation/complete.html',
+            controller: 'ActivityCompleteController'
         });
 });
 

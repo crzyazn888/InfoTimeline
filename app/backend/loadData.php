@@ -25,8 +25,13 @@ if($loadResult->num_rows == 1) {
     $json = json_decode($json, true);
 
     //Rationale and Source order
-    $rationales = explode("|", $row["source_rationales"]);
-    $order = explode("|", $row["source_order"]);
+    if(isset($_GET["final"]) && $_GET["final"] == 1) {
+        $rationales = explode("|", $row["source_rationales_final"]);
+        $order = explode("|", $row["source_order_final"]);
+    } else {
+        $rationales = explode("|", $row["source_rationales"]);
+        $order = explode("|", $row["source_order"]);
+    }
 
     //Generate sources
     foreach($order as $key=>$value) {
