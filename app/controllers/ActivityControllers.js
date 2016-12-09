@@ -12,6 +12,13 @@ angular.module('InfoTimeline')
 
         init();
     }])
+    .controller('ActivityCompleteController', ['$scope', '$routeParams', 'configService', 'dbService', function($scope, $routeParams, configService, dbService) {
+        function init() {
+            $scope.routeParams = $routeParams;
+        }
+
+        init();
+    }])
     .controller('ActivityStep1Controller', ['$scope', '$routeParams', 'configService', 'dbService', 'activityService', '$mdDialog', '$location', function($scope, $routeParams, configService, dbService, activityService, $mdDialog, $location) {
         function init() {
             $scope.routeParams = $routeParams;
@@ -178,7 +185,7 @@ angular.module('InfoTimeline')
                 $scope.activity = response;
             });
             dbService.saveState($scope.routeParams.id, 3, $scope.routeParams.activityFolder);
-            dbService.loadData($scope.routeParams.id, 1, 1).then(function(response) {
+            dbService.loadData($scope.routeParams.id, 1).then(function(response) {
                 $scope.sources = response;
             });
             $scope.helpToggle();
@@ -254,7 +261,7 @@ angular.module('InfoTimeline')
             };
         }
     }])
-    .controller('ActivityStep4Controller', ['$scope', '$routeParams', 'configService', 'dbService', 'activityService', '$mdDialog', '$location', function($scope, $routeParams, configService, dbService, activityService, $mdDialog, $location) {
+    .controller('ActivityStep4Controller', ['$scope', '$routeParams', 'configService', 'dbService', 'activityService', '$mdDialog', '$location', '$window', function($scope, $routeParams, configService, dbService, activityService, $mdDialog, $location, $window) {
         function init() {
             $scope.routeParams = $routeParams;
             $scope.sourceNum = 0;
@@ -262,7 +269,7 @@ angular.module('InfoTimeline')
                 $scope.activity = response;
             });
             dbService.saveState($scope.routeParams.id, 4, $scope.routeParams.activityFolder);
-            dbService.loadData($scope.routeParams.id, 1, 1).then(function(response) {
+            dbService.loadData($scope.routeParams.id, 1, 1, 1).then(function(response) {
                 $scope.sources = response;
                 $scope.loadSource($scope.sourceNum);
             });
@@ -314,7 +321,8 @@ angular.module('InfoTimeline')
         * @method saveData
         **/
         $scope.saveData = function() {
-            var url = "/activity/"+$scope.routeParams.activityFolder+"/4/"+$scope.routeParams.id;
+            $window.open('/app/backend/downloadFile.php?id='+$scope.routeParams.id, '_blank');
+            var url = "/activity/"+$scope.routeParams.activityFolder+"/complete";
             $location.path(url);
         };
 
