@@ -83,6 +83,7 @@ angular.module('InfoTimelineConfig')
                 exampleOrder2: [],
                 exampleOrder3: []
             };
+            $scope.savedJson = "";
         }
 
         init();
@@ -91,6 +92,15 @@ angular.module('InfoTimelineConfig')
             axis: 'y'
         };
 
+        /**
+        * Load Saved Topic json
+        *
+        * @method loadJson
+        **/
+        $scope.loadJson = function() {
+            $scope.data = JSON.parse($scope.savedJson);
+            $scope.savedJson = "";
+        };
         /**
         * Add sources
         *
