@@ -12,6 +12,9 @@ angular.module('InfoTimelineConfig')
     .controller('ConfigHomeController', ['$scope', function($scope) {
 
     }])
+    .controller('ConfigViewController', ['$scope', function($scope) {
+
+    }])
     .controller('ConfigConfigController', ['$scope', '$http', '$window', function($scope, $http, $window) {
         function init() {
             $scope.data = {
